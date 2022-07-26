@@ -1,0 +1,118 @@
+<section class="breadcrumb_part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner">
+                    <h2>Cart</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb part end-->
+
+<!--================Checkout Area =================-->
+<section class="checkout_area section_padding">
+    <div class="container">
+        <div class="billing_details">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cart_inner">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let c of cartDetailsList">
+                                        <td>
+                                            <div class="media">
+                                                <div class="d-flex">
+                                                    <img src="/assets/img/product/{{c.productImage}}" alt="" />
+                                                </div>
+                                                <div class="media-body">
+                                                    <p>{{c.productName}}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h5>${{c.productPrice}}</h5>
+                                        </td>
+                                        <td>
+                                            <div class="product_count">
+                                                <input class="input-number" type="text" value="{{c.quantity}}" min="0"
+                                                    max="10" readonly>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h5>${{c.total}}</h5>
+                                        </td>
+                                    </tr>
+                                    <tr class="bottom_button">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="cupon_text float-right">
+                                                <a class="btn_1" href="/product/0">continue Shopping</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="order_box">
+                <h2>Your Order</h2>
+                <ul class="list">
+                    <li><a href="#">Product <span>Total</span>
+                        </a></li>
+                    <li *ngFor="let c of cartDetailsList">
+                        <a href="#">
+                            {{c.productName}}
+                            <span class="middle">
+                                x {{c.quantity}}
+                            </span>
+                            <span class="last">
+                                $ {{c.total}}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="list list_2">
+                    <li><a href="#">Subtotal <span>${{cart.total}} </span>
+                        </a></li>
+                    <li><a href="#">Discount <span>$0</span>
+                        </a></li>
+                    <li><a href="#">Shipping <span>$0</span>
+                        </a></li>
+                    <li><a href="#">Total <span>${{cart.total}}</span>
+                        </a></li>
+                </ul>
+                <div class="payment_item">
+                    <div class="radion_btn">
+                        <input type="radio" id="f-option5" name="selector" /> <label for="f-option5">Cash</label>
+                        <div class="check"></div>
+                    </div>
+                </div>
+                <div class="payment_item active">
+                    <div class="radion_btn">
+                        <input type="radio" id="f-option6" name="selector" /> <label for="f-option6">Paypal </label>
+                        <img src="/assets/img/product/single-product/card.jpg" alt="" />
+                        <div class="check"></div>
+                    </div>
+                </div>
+                <a class="btn_3" href="" (click)="checkout()">Check out</a>
+            </div>
+        </div>
+    </div>
+</section>

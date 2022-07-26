@@ -1,0 +1,74 @@
+<section class="breadcrumb_part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner">
+                    <h2>Product</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb part end-->
+
+<!-- product list part start-->
+<section class="product_list section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product_sidebar">
+                    <div class="single_sedebar">
+                        <form action="" method="post" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+                            <input type="text" formControlName="name" placeholder="Search keyword">
+                            <i class="ti-search"></i>
+                        </form>
+                    </div>
+                    <div class="single_sedebar">
+                        <div class="select_option">
+                            <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
+                            <div class="select_option_dropdown">
+                                <p *ngFor="let cate of categories"><a href="/product/0/category/{{cate.id}}">{{cate.name}}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single_sedebar">
+                        <div class="select_option">
+                            <div class="select_option_list">Brand <i class="right fas fa-caret-down"></i> </div>
+                            <div class="select_option_dropdown">
+                                    <p *ngFor="let brand of brands"><a href="/product/0/brand/{{brand.id}}">{{brand.name}}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single_sedebar">
+                        <div class="select_option">
+                            <div class="select_option_list">Sort by: <i class="right fas fa-caret-down"></i> </div>
+                            <div class="select_option_dropdown">
+                                <p (click)="sort('price','desc')">Price desc</p>
+                                <p (click)="sort('price','asc')">Price asc</p>
+                                <p (click)="sort('name','desc')">Name desc</p>
+                                <p (click)="sort('name','asc')">Name asc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="product_list">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6" *ngFor="let prod of products">
+                            <div class="single_product_item">
+                                <img src="/assets/img/product/{{prod.image}}" alt="#" class="img-fluid">
+                                <h3> <a href="/details/{{prod.id}}">{{prod.name}}</a> </h3>
+                                <p>${{prod.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="load_more_btn text-center">
+                        <a href="/product/{{page+1}}" class="btn_3">View Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-subcribe></app-subcribe>
