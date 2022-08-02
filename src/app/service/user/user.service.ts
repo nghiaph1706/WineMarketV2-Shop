@@ -21,11 +21,15 @@ export class UserService {
   logout(){
     this.cookieService.delete('token');
     this.cookieService.delete('user_Id');
+    this.cookieService.delete('cart_Id');
+    this.cookieService.delete('isAdmin');
     this.route.navigate(['']);
   }
 
   signup(data: any): Observable<any>{
-    return this.http.post<any>(_api, data);
+    return this.http.post<any>(
+      _api + 'signup', 
+      data);
   }
 
   sendcode(data: any): Observable<any>{

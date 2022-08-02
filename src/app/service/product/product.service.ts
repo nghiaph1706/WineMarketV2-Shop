@@ -16,8 +16,8 @@ export class ProductService {
   }
 
   getProductsLimit(_limit: number = 4, _page: number = 0, _sort: string = 'id', _order: string = 'desc',
-    name_like: string = '', category_Id: string = '', brand_Id: string = ''): Observable<Array<Product>> {
-    return this.http.get<Array<Product>>(_api + '?_limit=' + _limit + '&_page=' + _page + '&_sort=' + _sort + '&_order=' + _order + '&name_like=' + name_like + '&category_Id=' + category_Id + '&brand_Id=' + brand_Id);
+    name_like: string = '', category_Id: string = '', brand_Id: string = ''): Observable<Array<any>> {
+    return this.http.get<Array<any>>(_api + '?_limit=' + _limit + '&_page=' + _page + '&_sort=' + _sort + '&_order=' + _order + '&name_like=' + name_like + '&category_Id=' + category_Id + '&brand_Id=' + brand_Id);
   }
 
 }

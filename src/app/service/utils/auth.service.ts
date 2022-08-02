@@ -25,4 +25,12 @@ export class AuthService {
     }
   }
 
+  isAdmin(): boolean{
+    try {
+      return Boolean(JSON.parse(this.cookieService.get('isAdmin')))
+    } catch (error) {
+      return false;
+    }
+  }
+
 }

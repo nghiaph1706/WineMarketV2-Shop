@@ -13,7 +13,7 @@ import { ProductService } from 'src/app/service/product/product.service';
   templateUrl: './product.component.html'
 })
 export class ProductComponent implements OnInit {
-  products: Array<Product> = new Array<Product>;
+  products: Array<any> = new Array()
   categories: Array<Category> = new Array<Category>;
   brands: Array<Brand> = new Array<Brand>;
   page: number = 0;

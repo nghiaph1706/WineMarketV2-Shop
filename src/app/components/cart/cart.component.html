@@ -33,7 +33,7 @@
                                         <td>
                                             <div class="media">
                                                 <div class="d-flex">
-                                                    <img src="/assets/img/product/{{c.productImage}}" alt="" />
+                                                    <img src="https://res.cloudinary.com/winemarket/image/upload/v1659403526/winemarket/product/{{c.productImage}}" alt="" />
                                                 </div>
                                                 <div class="media-body">
                                                     <p>{{c.productName}}</p>
@@ -107,11 +107,11 @@
                 <div class="payment_item active">
                     <div class="radion_btn">
                         <input type="radio" id="f-option6" name="selector" /> <label for="f-option6">Paypal </label>
-                        <img src="/assets/img/product/single-product/card.jpg" alt="" />
+                        <img src="https://res.cloudinary.com/winemarket/image/upload/v1659403526/winemarket/product/single-product/card.jpg" alt="" />
                         <div class="check"></div>
                     </div>
                 </div>
-                <a class="btn_3" href="" (click)="checkout()">Check out</a>
+                <a class="btn_3" (click)="checkout()">Check out</a>
             </div>
         </div>
     </div>

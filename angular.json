@@ -37,7 +37,8 @@
               "src/assets/css/slick.css",
               "src/assets/css/style.css",
               "src/assets/css/swiper.min.css",
-              "src/assets/css/themify-icons.css"
+              "src/assets/css/themify-icons.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "src/assets/js/jquery-1.12.1.min.js",
@@ -104,6 +105,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+              "port": 4200
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
