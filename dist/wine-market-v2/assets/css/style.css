@@ -7554,11 +7554,6 @@ h6 {
   border: 1px solid #f1f1f1;
 }
 
-/* line 799, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
-.primary-checkbox input:checked + label {
-  background: url(../img/elements/primary-check.png) no-repeat center center/cover;
-  border: none;
-}
 
 /* line 807, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
 .confirm-checkbox {
@@ -7596,11 +7591,6 @@ h6 {
   border: 1px solid #f1f1f1;
 }
 
-/* line 836, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
-.confirm-checkbox input:checked + label {
-  background: url(../img/elements/success-check.png) no-repeat center center/cover;
-  border: none;
-}
 
 /* line 844, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
 .disabled-checkbox {
@@ -7644,11 +7634,6 @@ h6 {
   z-index: 3;
 }
 
-/* line 877, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
-.disabled-checkbox input:checked + label {
-  background: url(../img/elements/disabled-check.png) no-repeat center center/cover;
-  border: none;
-}
 
 /* line 885, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
 .primary-radio {
@@ -7686,11 +7671,6 @@ h6 {
   border: 1px solid #f1f1f1;
 }
 
-/* line 914, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
-.primary-radio input:checked + label {
-  background: url(../img/elements/primary-radio.png) no-repeat center center/cover;
-  border: none;
-}
 
 /* line 922, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
 .confirm-radio {
@@ -7728,11 +7708,6 @@ h6 {
   border: 1px solid #f1f1f1;
 }
 
-/* line 951, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
-.confirm-radio input:checked + label {
-  background: url(../img/elements/success-radio.png) no-repeat center center/cover;
-  border: none;
-}
 
 /* line 959, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
 .disabled-radio {
@@ -7776,11 +7751,6 @@ h6 {
   z-index: 3;
 }
 
-/* line 992, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
-.disabled-radio input:checked + label {
-  background: url(../img/elements/disabled-radio.png) no-repeat center center/cover;
-  border: none;
-}
 
 /* line 1000, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_elements.scss */
 .default-select {
