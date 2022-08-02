@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/entity/user.entity';
 import { AuthService } from '../utils/auth.service';
 
-const _api = 'http://localhost:8080/api/v1/user/';
+const _api = 'https://winemarketv2-server.herokuapp.com/api/v1/user/';
 @Injectable({
   providedIn: 'root'
 })
