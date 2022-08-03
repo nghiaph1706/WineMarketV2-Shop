@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/entity/user.entity';
 import { UserService } from 'src/app/service/user/user.service';
@@ -15,9 +15,9 @@ export class ForgotComponent implements OnInit {
   code: string = '' + sessionStorage.getItem('code');
   user: User;
   forgotForm: FormGroup = new FormGroup({
-    Password: new FormControl,
-    Repassword: new FormControl,
-    Code: new FormControl
+    Password: new FormControl('', Validators.required),
+    Repassword: new FormControl('', Validators.required),
+    Code: new FormControl('', Validators.required)
   })
   constructor(private messageService: MessageService, private userService: UserService, private route: Router) { }
 

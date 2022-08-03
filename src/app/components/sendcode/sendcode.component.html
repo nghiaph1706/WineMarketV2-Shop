@@ -32,13 +32,19 @@
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="username" formControlName="Username" value=""
                                     placeholder="Username">
+                                    <span style="color: red;" *ngIf="sendCodeForm.controls['Username'].errors?.['required']">
+                                        Username is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="email" formControlName="Email" value=""
                                     placeholder="Email">
+                                    <span style="color: red;" *ngIf="sendCodeForm.controls['Email'].errors?.['required']">
+                                        Email is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group">
-                                <button type="submit" class="btn_3">
+                                <button [disabled]="this.sendCodeForm.invalid" type="submit" class="btn_3">
                                     Send code
                                 </button>
                             </div>

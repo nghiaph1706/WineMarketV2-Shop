@@ -8,12 +8,14 @@ import { MessageService } from 'src/app/service/utils/message.service';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
-  checkAdmin: boolean = false;
+  checkAdmin: boolean = false
+  checkLogin: boolean = false
 
   constructor(private messageService: MessageService, private userService: UserService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.checkAdmin = this.authService.isAdmin()
+    this.checkLogin= this.authService.isLogin()
   }
 
   onLogout(){

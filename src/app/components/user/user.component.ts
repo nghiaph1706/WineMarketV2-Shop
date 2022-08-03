@@ -36,12 +36,14 @@ export class UserComponent implements OnInit {
 
   onUpdate(){
     var image = new FormData();
-    image.append('file', this.userForm.controls['attach'].value);
-    this.uploadService.uploadImage(image, 'user').subscribe(
-      error => {
-        console.log(error)
-      }
-    );
+    if (this.userForm.controls['Image'].value != null) {
+      image.append('file', this.userForm.controls['Image'].value);
+      this.uploadService.uploadImage(image, 'user').subscribe(
+        error => {
+          console.log(error)
+        }
+      );
+    }
     this.user.image = this.fileName.replace(" ","%20");
     this.user.id = this.cookieService.get('user_Id');
     this.userService.update(this.user).subscribe(

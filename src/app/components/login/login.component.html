@@ -36,13 +36,19 @@
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="name" formControlName="username" value=""
                                     placeholder="Username">
+                                    <span style="color: red;" *ngIf="loginForm.controls['username'].errors?.['required']">
+                                        Username is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" id="password" formControlName="password" value=""
                                     placeholder="Password">
+                                    <span style="color: red;" *ngIf="loginForm.controls['password'].errors?.['required']">
+                                        Password is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group">
-                                <button type="submit" value="submit" class="btn_3">
+                                <button [disabled]="this.loginForm.invalid" type="submit" value="submit" class="btn_3">
                                     log in
                                 </button>
                                 <a class="lost_pass" href="/sendcode">forget password?</a>

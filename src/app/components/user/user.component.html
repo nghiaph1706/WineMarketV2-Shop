@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="attach" name="attach" aria-describedby="inputGroupFileAddon01" (change)="onFileSelected($event)">
+                                    <input type="file" class="custom-file-input" accept="image/*" id="attach" name="attach" aria-describedby="inputGroupFileAddon01" (change)="onFileSelected($event)">
                                     <label class="custom-file-label" for="inputGroupFile01">{{fileName.length > 0 ? fileName : user.image}}</label>
                                  </div>
                             </div>

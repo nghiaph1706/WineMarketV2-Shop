@@ -25,6 +25,17 @@
                     </div>
                     <div class="single_sedebar">
                         <div class="select_option">
+                            <div class="select_option_list">Sort by: <i class="right fas fa-caret-down"></i> </div>
+                            <div class="select_option_dropdown">
+                                <p (click)="sort('price','desc')">Price desc</p>
+                                <p (click)="sort('price','asc')">Price asc</p>
+                                <p (click)="sort('name','desc')">Name desc</p>
+                                <p (click)="sort('name','asc')">Name asc</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single_sedebar">
+                        <div class="select_option">
                             <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
                             <div class="select_option_dropdown">
                                 <p *ngFor="let cate of categories"><a href="/product/0/category/{{cate.id}}">{{cate.name}}</a></p>
@@ -36,17 +47,6 @@
                             <div class="select_option_list">Brand <i class="right fas fa-caret-down"></i> </div>
                             <div class="select_option_dropdown">
                                     <p *ngFor="let brand of brands"><a href="/product/0/brand/{{brand.id}}">{{brand.name}}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_sedebar">
-                        <div class="select_option">
-                            <div class="select_option_list">Sort by: <i class="right fas fa-caret-down"></i> </div>
-                            <div class="select_option_dropdown">
-                                <p (click)="sort('price','desc')">Price desc</p>
-                                <p (click)="sort('price','asc')">Price asc</p>
-                                <p (click)="sort('name','desc')">Name desc</p>
-                                <p (click)="sort('name','asc')">Name asc</p>
                             </div>
                         </div>
                     </div>

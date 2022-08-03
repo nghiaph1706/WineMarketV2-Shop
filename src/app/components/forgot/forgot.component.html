@@ -40,14 +40,23 @@
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" id="password" formControlName="Password" value=""
                                     placeholder="Password">
+                                    <span style="color: red;" *ngIf="forgotForm.controls['Password'].errors?.['required']">
+                                        Password is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" id="repassword" formControlName="Repassword" value=""
                                     placeholder="Re-Password">
+                                    <span style="color: red;" *ngIf="forgotForm.controls['Repassword'].errors?.['required']">
+                                        Re-Password is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="code" formControlName="Code" value=""
                                     placeholder="Code">
+                                    <span style="color: red;" *ngIf="forgotForm.controls['Code'].errors?.['required']">
+                                        Code is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group">
                                 <button type="submit" value="submit" class="btn_3">

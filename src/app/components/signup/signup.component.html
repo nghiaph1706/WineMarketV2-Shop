@@ -33,21 +33,33 @@
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="username" formControlName="Username" value=""
                                     placeholder="Username">
+                                    <span style="color: red;" *ngIf="signupForm.controls['Username'].errors?.['required']">
+                                        Username is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="email" formControlName="Email" value=""
                                     placeholder="Email">
+                                    <span style="color: red;" *ngIf="signupForm.controls['Email'].errors?.['required']">
+                                        Email is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" id="password" formControlName="Password" value=""
                                     placeholder="Password">
+                                    <span style="color: red;" *ngIf="signupForm.controls['Password'].errors?.['required']">
+                                        Password is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" id="repassword" formControlName="Repassword" value=""
                                     placeholder="Re-Password">
+                                    <span style="color: red;" *ngIf="signupForm.controls['Repassword'].errors?.['required']">
+                                        Re-Password is required.
+                                    </span>
                             </div>
                             <div class="col-md-12 form-group">
-                                <button type="submit" value="submit" class="btn_3">
+                                <button [disabled]="this.signupForm.invalid" type="submit" value="submit" class="btn_3">
                                     sign up
                                 </button>
                                 <a class="lost_pass" href="/login">Have an account? Log in now!</a>
