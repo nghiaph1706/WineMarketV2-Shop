@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb_iner">
-                    <h2>contact</h2>
+                    <h2>{{'titleContact' | translate}}</h2>
                 </div>
             </div>
         </div>
@@ -22,9 +22,6 @@
 
 
   <div class="row">
-    <div class="col-12">
-      <h2 class="contact-title">Get in Touch</h2>
-    </div>
     <div class="col-lg-8">
       <form class="form-contact contact_form" action="/contact/support" method="post" id=""
         novalidate="novalidate">
@@ -39,24 +36,24 @@
           <div class="col-sm-6">
             <div class="form-group">
               <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
+                onblur="this.placeholder = 'Enter your name'" placeholder="{{'lblYourName' | translate}}">
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
               <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
+                onblur="this.placeholder = 'Enter email address'" placeholder="{{'lblYourEmail' | translate}}">
             </div>
           </div>
           <div class="col-12">
             <div class="form-group">
               <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject'>
+                onblur="this.placeholder = 'Enter Subject'" placeholder="{{'lblSubject' | translate}}">
             </div>
           </div>
         </div>
         <div class="form-group mt-3">
-          <button type="submit" class="btn_3 button-contactForm">Send Message</button>
+          <button type="submit" class="btn_3 button-contactForm">{{'btnSendMessage' | translate}}</button>
         </div>
       </form>
     </div>
@@ -64,22 +61,22 @@
       <div class="media contact-info">
         <span class="contact-info__icon"><i class="ti-home"></i></span>
         <div class="media-body">
-          <h3>District 12, Ho Chi Minh City</h3>
-          <p>QTSC Building 1</p>
+          <h3>{{'lblAddress' | translate}}</h3>
+          <p>{{'lblBuilding' | translate}}</p>
         </div>
       </div>
       <div class="media contact-info">
         <span class="contact-info__icon"><i class="ti-tablet"></i></span>
         <div class="media-body">
           <h3>(028) 3715 8888</h3>
-          <p>Mon to Fri 9am to 6pm</p>
+          <p>{{'lblWorkTime' | translate}}</p>
         </div>
       </div>
       <div class="media contact-info">
         <span class="contact-info__icon"><i class="ti-email"></i></span>
         <div class="media-body">
           <h3>winemarket.247@gmail.com</h3>
-          <p>Send us your query anytime!</p>
+          <p>{{'txtContact' | translate}}</p>
         </div>
       </div>
     </div>

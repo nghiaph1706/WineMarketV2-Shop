@@ -6,6 +6,7 @@ import { ProductService } from 'src/app/service/product/product.service';
 import { CookieService } from 'ngx-cookie-service';
 import { CartDetailsService } from 'src/app/service/cartDetails/cart-details.service';
 import { MessageService } from 'src/app/service/utils/message.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-details',
@@ -19,7 +20,7 @@ export class DetailsComponent implements OnInit {
     quantity: new FormControl,
     total: new FormControl
   })
-  constructor(private messageService: MessageService, private productService: ProductService, private route:ActivatedRoute, private cookieService: CookieService, private cartDetailsService: CartDetailsService) { }
+  constructor(private messageService: MessageService, private productService: ProductService, private route:ActivatedRoute, private cookieService: CookieService, private cartDetailsService: CartDetailsService, private translate: TranslateService) { }
 
   ngOnInit(): void {
     this.getRoute(this.route.snapshot.params['id']);
@@ -38,7 +39,7 @@ export class DetailsComponent implements OnInit {
     this.productForm.controls['total'].setValue(Number(this.productForm.controls['quantity'].value) * Number(this.product.price))
     this.cartDetailsService.create(this.productForm.value).subscribe(
       data => {
-        this.messageService.showSuccess("Item has been added to cart!")
+        this.messageService.showSuccess(this.translate.instant('notiAddToCartSuccess'))
       }
     )
 

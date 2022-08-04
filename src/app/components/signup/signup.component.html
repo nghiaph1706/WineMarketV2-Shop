@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb_iner">
-                    <h2>SignUp</h2>
+                    <h2>{{'titleSignup' | translate}}</h2>
                 </div>
             </div>
         </div>
@@ -20,9 +20,8 @@
             <div class="col-lg-6 col-md-6">
                 <div class="login_part_text text-center">
                     <div class="login_part_text_iner">
-                        <h2>Hi! Welcome ! </h2>
-                        <p>There are advances being made in science and technology
-                            everyday, and a good example of this is the</p>
+                        <h2>{{'lblHiWelcome' | translate}}</h2>
+                        <p>{{'txtLogin' | translate}}</p>
                     </div>
                 </div>
             </div>
@@ -32,37 +31,37 @@
                         <form class="row contact_form" action="" method="post" [formGroup]="signupForm" (ngSubmit)="onSignup()">
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="username" formControlName="Username" value=""
-                                    placeholder="Username">
+                                    placeholder="{{'lblUsername' | translate}}">
                                     <span style="color: red;" *ngIf="signupForm.controls['Username'].errors?.['required']">
-                                        Username is required.
+                                        {{'errUsername' | translate}}
                                     </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="email" formControlName="Email" value=""
-                                    placeholder="Email">
+                                    placeholder="{{'lblEmail' | translate}}">
                                     <span style="color: red;" *ngIf="signupForm.controls['Email'].errors?.['required']">
-                                        Email is required.
+                                        {{'errEmail' | translate}}
                                     </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" id="password" formControlName="Password" value=""
-                                    placeholder="Password">
+                                    placeholder="{{'lblPassword' | translate}}">
                                     <span style="color: red;" *ngIf="signupForm.controls['Password'].errors?.['required']">
-                                        Password is required.
+                                        {{'errPassword' | translate}}
                                     </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" id="repassword" formControlName="Repassword" value=""
-                                    placeholder="Re-Password">
+                                    placeholder="{{'lblRePassword' | translate}}">
                                     <span style="color: red;" *ngIf="signupForm.controls['Repassword'].errors?.['required']">
-                                        Re-Password is required.
+                                        {{'errRePassword' | translate}}
                                     </span>
                             </div>
                             <div class="col-md-12 form-group">
                                 <button [disabled]="this.signupForm.invalid" type="submit" value="submit" class="btn_3">
-                                    sign up
+                                    {{'btnSignup' | translate}}
                                 </button>
-                                <a class="lost_pass" href="/login">Have an account? Log in now!</a>
+                                <a class="lost_pass" href="/login">{{'lblLoginNow' | translate}}</a>
                             </div>
                         </form>
                     </div>

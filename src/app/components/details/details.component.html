@@ -26,7 +26,7 @@
                 <div class="single_product_text text-center">
                     <form action="" method="post" [formGroup]="productForm" (ngSubmit)="addToCart()">
                         <h3>{{product.name}}</h3>
-                        <p>Price: $ {{product.price}} </p>
+                        <p>{{'lblPrice' | translate}}: $ {{product.price}} </p>
                         <div class="card_area">
                             <div class="product_count_area">
                                 <div class="product_count d-inline-block">
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="add_to_cart">
-                                <button type="submit" class="btn_3">add to cart</button>
+                                <button type="submit" class="btn_3">{{'lblAddToCart' | translate}}</button>
                             </div>
                         </div>
                     </form>

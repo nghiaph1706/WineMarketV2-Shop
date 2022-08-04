@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb_iner">
-                    <h2>Product</h2>
+                    <h2>{{'titleProduct' | translate}}</h2>
                 </div>
             </div>
         </div>
@@ -25,18 +25,18 @@
                     </div>
                     <div class="single_sedebar">
                         <div class="select_option">
-                            <div class="select_option_list">Sort by: <i class="right fas fa-caret-down"></i> </div>
+                            <div class="select_option_list">{{'lblSortBy' | translate}} <i class="right fas fa-caret-down"></i> </div>
                             <div class="select_option_dropdown">
-                                <p (click)="sort('price','desc')">Price desc</p>
-                                <p (click)="sort('price','asc')">Price asc</p>
-                                <p (click)="sort('name','desc')">Name desc</p>
-                                <p (click)="sort('name','asc')">Name asc</p>
+                                <p (click)="sort('price','desc')">{{'lblPrice' | translate}} {{'lblDESC' | translate}}</p>
+                                <p (click)="sort('price','asc')">{{'lblPrice' | translate}} {{'lblASC' | translate}}</p>
+                                <p (click)="sort('name','desc')">{{'lblNameProduct' | translate}} {{'lblDESC' | translate}}</p>
+                                <p (click)="sort('name','asc')">{{'lblNameProduct' | translate}} {{'lblASC' | translate}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="single_sedebar">
                         <div class="select_option">
-                            <div class="select_option_list">Category <i class="right fas fa-caret-down"></i> </div>
+                            <div class="select_option_list">{{'lblCategory' | translate}} <i class="right fas fa-caret-down"></i> </div>
                             <div class="select_option_dropdown">
                                 <p *ngFor="let cate of categories"><a href="/product/0/category/{{cate.id}}">{{cate.name}}</a></p>
                             </div>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="single_sedebar">
                         <div class="select_option">
-                            <div class="select_option_list">Brand <i class="right fas fa-caret-down"></i> </div>
+                            <div class="select_option_list">{{'lblBrand' | translate}} <i class="right fas fa-caret-down"></i> </div>
                             <div class="select_option_dropdown">
                                     <p *ngFor="let brand of brands"><a href="/product/0/brand/{{brand.id}}">{{brand.name}}</a></p>
                             </div>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="load_more_btn text-center">
-                        <a href="/product/{{page+1}}" class="btn_3">View Next</a>
+                        <a href="/product/{{page+1}}" class="btn_3">{{'btnNext' | translate}}</a>
                     </div>
                 </div>
             </div>

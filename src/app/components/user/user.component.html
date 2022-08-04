@@ -1,48 +1,55 @@
-
 <section class="breadcrumb_part">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb_iner">
-                    <h2>Account Information</h2>
+                    <h2>{{'lblAccountInfo' | translate}}</h2>
                 </div>
             </div>
         </div>
     </div>
 </section>
- <section class="login_part section_padding ">
+<section class="login_part section_padding ">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6">
                 <div class="login_part_text text-center">
                     <div class="login_part_text_iner">
-                        <img alt="" src="https://res.cloudinary.com/winemarket/image/upload/v1659403526/winemarket/user/{{fileURL}}">
+                        <img alt=""
+                            src="https://res.cloudinary.com/winemarket/image/upload/v1659403526/winemarket/user/{{fileURL}}">
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="login_part_form">
                     <div class="login_part_form_iner">
-                        <h3>Have a good day!<br>
-                            You can update information here!</h3>
-                        <form class="row contact_form" action="" method="post" enctype="multipart/form-data" [formGroup]="userForm" (ngSubmit)="onUpdate()">
+                        <h3>{{'lblGoodDay' | translate}}<br>
+                            {{'lblUpdateHere' | translate}}</h3>
+                        <form class="row contact_form" action="" method="post" enctype="multipart/form-data"
+                            [formGroup]="userForm" (ngSubmit)="onUpdate()">
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="name" formControlName="Username"
-                                    placeholder="Username" readonly>
+                                    placeholder="{{'lblUsername' | translate}}" readonly>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="email" formControlName="Email"
-                                    placeholder="Email">
+                                    placeholder="{{'lblEmail' | translate}}">
+                                <span style="color: red;" *ngIf="userForm.controls['Email'].errors?.['required']">
+                                    {{'errEmail' | translate}}
+                                </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" accept="image/*" id="attach" name="attach" aria-describedby="inputGroupFileAddon01" (change)="onFileSelected($event)">
-                                    <label class="custom-file-label" for="inputGroupFile01">{{fileName.length > 0 ? fileName : user.image}}</label>
-                                 </div>
+                                    <input type="file" class="custom-file-input" accept="image/*" id="attach"
+                                        name="attach" aria-describedby="inputGroupFileAddon01"
+                                        (change)="onFileSelected($event)">
+                                    <label class="custom-file-label" for="inputGroupFile01">{{fileName.length > 0 ?
+                                        fileName : user.image}}</label>
+                                </div>
                             </div>
                             <div class="col-md-12 form-group">
-                                <button type="submit" value="submit" class="btn_3">
-                                    Update 
+                                <button type="submit" value="submit" class="btn_3" [disabled]="this.userForm.invalid">
+                                    {{'btnUpdate' | translate}}
                                 </button>
                             </div>
                         </form>

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb_iner">
-                    <h2>Forgot Password </h2>
+                    <h2>{{'titleForgot'}}</h2>
                 </div>
             </div>
         </div>
@@ -19,9 +19,8 @@
             <div class="col-lg-6 col-md-6">
                 <div class="login_part_text text-center">
                     <div class="login_part_text_iner">
-                        <h2>Hi! Welcome ! </h2>
-                        <p>There are advances being made in science and technology
-                            everyday.</p>
+                        <h2>{{'lblHiWelcome' | translate}}</h2>
+                        <p>{{'txtForgot' | translate}}</p>
                     </div>
                 </div>
             </div>
@@ -31,36 +30,36 @@
                         <form class="row contact_form" action="" method="post" [formGroup]="forgotForm" (ngSubmit)="onForgot()">
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="username" name="Username" value="{{username}}"
-                                    placeholder="Username" readonly>
+                                    placeholder="{{'lblUsername' | translate}}" readonly>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="email" class="form-control" id="email" name="Email" value="{{email}}"
-                                    placeholder="Email" readonly>
+                                    placeholder="{{'lblEmail' | translate}}" readonly>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" id="password" formControlName="Password" value=""
-                                    placeholder="Password">
+                                    placeholder="{{'lblPassword' | translate}}">
                                     <span style="color: red;" *ngIf="forgotForm.controls['Password'].errors?.['required']">
-                                        Password is required.
+                                        {{'errPassword' | translate}}
                                     </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" id="repassword" formControlName="Repassword" value=""
-                                    placeholder="Re-Password">
+                                    placeholder="{{'lblRePassword' | translate}}">
                                     <span style="color: red;" *ngIf="forgotForm.controls['Repassword'].errors?.['required']">
-                                        Re-Password is required.
+                                        {{'errRePassword' | translate}}
                                     </span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="code" formControlName="Code" value=""
-                                    placeholder="Code">
+                                    placeholder="{{'lblCode' | translate}}">
                                     <span style="color: red;" *ngIf="forgotForm.controls['Code'].errors?.['required']">
-                                        Code is required.
+                                        {{'errCode' | translate}}
                                     </span>
                             </div>
                             <div class="col-md-12 form-group">
                                 <button type="submit" value="submit" class="btn_3">
-                                    Update
+                                    {{'btnUpdate' | translate}}
                                 </button>
                             </div>
                         </form>

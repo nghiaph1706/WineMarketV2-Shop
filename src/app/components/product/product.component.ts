@@ -3,7 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, ChildActivationStart } from '@angular/router';
 import { Brand } from 'src/app/entity/brand.entity';
 import { Category } from 'src/app/entity/category.entity';
-import { Product } from 'src/app/entity/product.entity';
 import { BrandService } from 'src/app/service/brand/brand.service';
 import { CategoryService } from 'src/app/service/category/category.service';
 import { ProductService } from 'src/app/service/product/product.service';

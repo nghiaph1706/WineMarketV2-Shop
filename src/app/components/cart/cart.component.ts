@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Cart } from 'src/app/entity/cart.entity';
 import { CartService } from 'src/app/service/cart/cart.service';
@@ -13,7 +13,7 @@ import { MessageService } from 'src/app/service/utils/message.service';
 export class CartComponent implements OnInit {
   cartDetailsList: Array<any> = new Array()
   cart: Cart
-  constructor(private cartDetailsService: CartDetailsService, private cartService: CartService, private cookieService: CookieService, private route: Router, private messageService: MessageService) { }
+  constructor(private cartDetailsService: CartDetailsService, private cartService: CartService, private cookieService: CookieService, private messageService: MessageService, private translate: TranslateService) { }
 
   ngOnInit(): void {
     this.cartDetailsService.findByCartId(this.cookieService.get('cart_Id')).subscribe(
@@ -37,7 +37,7 @@ export class CartComponent implements OnInit {
         this.cookieService.set('cart_Id', data.cartId)
         this.cart = new Cart
         this.cartDetailsList = new Array()
-        this.messageService.showSuccess("Checkout Success!")
+        this.messageService.showSuccess(this.translate.instant('notiCheckOutSuccess'))
       }
     )
   }

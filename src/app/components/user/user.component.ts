@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/entity/user.entity';
 import { CookieService } from 'ngx-cookie-service';
 import { UserService } from 'src/app/service/user/user.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UploadService } from 'src/app/service/utils/upload.service';
 import { MessageService } from 'src/app/service/utils/message.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user',
@@ -16,10 +17,10 @@ export class UserComponent implements OnInit {
   fileURL: string = '';
   userForm: FormGroup = new FormGroup({
     Username: new FormControl,
-    Email: new FormControl,
+    Email: new FormControl('', Validators.required),
     attach: new FormControl()
   })
-  constructor(private messageService: MessageService, private userService: UserService, private cookieService: CookieService, private uploadService: UploadService) { }
+  constructor(private messageService: MessageService, private userService: UserService, private cookieService: CookieService, private uploadService: UploadService, private translate: TranslateService) { }
 
   ngOnInit(): void {
     this.fileName = '';
@@ -49,11 +50,11 @@ export class UserComponent implements OnInit {
     this.userService.update(this.user).subscribe(
       data => {
         this.user = data;
-        this.messageService.showSuccess('Update success.')
+        this.messageService.showSuccess(this.translate.instant('notiUpdateSuccess'))
         window.location.reload();
       },
       error => {
-        this.messageService.showError('Update failed')
+        this.messageService.showError(this.translate.instant('notiUpdateError'))
       }
     )
   }
