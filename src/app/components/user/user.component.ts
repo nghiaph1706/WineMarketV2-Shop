@@ -35,23 +35,26 @@ export class UserComponent implements OnInit {
     )
   }
 
-  onUpdate(){
+  onUpdate(id: string) {
     var image = new FormData();
-    if (this.userForm.controls['Image'].value != null) {
-      image.append('file', this.userForm.controls['Image'].value);
+    if (this.userForm.controls['attach'].value != null) {
+      image.append('file', this.userForm.controls['attach'].value);
       this.uploadService.uploadImage(image, 'user').subscribe(
         error => {
           console.log(error)
         }
       );
     }
-    this.user.image = this.fileName.replace(" ","%20");
-    this.user.id = this.cookieService.get('user_Id');
-    this.userService.update(this.user).subscribe(
+
+    var username = this.userForm.controls['Username'].value == null ? this.user.username : this.userForm.controls['Username'].value
+    var img = this.fileName == 'null.png' ? this.user.image : this.fileName.replace(" ","%20")
+    var email = this.userForm.controls['Email'].value == null ? this.user.email : this.userForm.controls['Email'].value
+    var role = this.user.role
+    var user: User = new User(id, username, this.user.password, email, img, role);
+
+    this.userService.update(user).subscribe(
       data => {
-        this.user = data;
         this.messageService.showSuccess(this.translate.instant('notiUpdateSuccess'))
-        window.location.reload();
       },
       error => {
         this.messageService.showError(this.translate.instant('notiUpdateError'))

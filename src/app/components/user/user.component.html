@@ -26,13 +26,13 @@
                         <h3>{{'lblGoodDay' | translate}}<br>
                             {{'lblUpdateHere' | translate}}</h3>
                         <form class="row contact_form" action="" method="post" enctype="multipart/form-data"
-                            [formGroup]="userForm" (ngSubmit)="onUpdate()">
+                            [formGroup]="userForm" (ngSubmit)="onUpdate(this.user.id)">
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="name" formControlName="Username"
                                     placeholder="{{'lblUsername' | translate}}" readonly>
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="email" formControlName="Email"
+                                <input type="email" class="form-control" id="email" formControlName="Email"
                                     placeholder="{{'lblEmail' | translate}}">
                                 <span style="color: red;" *ngIf="userForm.controls['Email'].errors?.['required']">
                                     {{'errEmail' | translate}}
