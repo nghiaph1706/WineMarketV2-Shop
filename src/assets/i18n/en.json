@@ -24,7 +24,7 @@
     "lblAddress" : "District 12, Ho Chi Minh City",
     "lblBuilding" : "QTSC Building 1",
     "lblWorkTime" : "Mon to Fri 9am to 6pm",
-    "lblCreditCartSupport" : "Credit Card Support",
+    "lblCreditCardSupport" : "Credit Card Support",
     "lblOnlineOrder" : "Online Order",
     "lblFreeDelivery" : "Free Delivery",
     "lblProductGift" : "Product with Gift",
@@ -81,6 +81,7 @@
 
     "notiCheckOutSuccess" : "Checkout Success!",
     "notiAddToCartSuccess" : "Item has been added to cart!",
+    "notiAddToCartError" : "Please login first.",
     "notiChangePasswordSuccess" : "Change password success. Please login!",
     "notiChangePasswordError" : "Change password failed. Please try again.",
     "notiLogoutSuccess" : "Logout success!",

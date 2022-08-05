@@ -81,6 +81,7 @@
 
     "notiCheckOutSuccess": "Thanh toán thành công!",
     "notiAddToCartSuccess": "Hàng đã được thêm vào giỏ hàng!",
+    "notiAddToCartError" : "Bạn chưa đăng nhập.",
     "notiChangePasswordSuccess": "Đổi mật khẩu thành công. Vui lòng đăng nhập!",
     "notiChangePasswordError": "Đổi mật khẩu không thành công. Vui lòng thử lại.",
     "notiLogoutSuccess": "Đăng xuất thành công!",

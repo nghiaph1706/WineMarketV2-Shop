@@ -46,7 +46,7 @@ export class UserComponent implements OnInit {
       );
     }
 
-    var username = this.userForm.controls['Username'].value == null ? this.user.username : this.userForm.controls['Username'].value
+    var username = this.user.username
     var img = this.fileName == 'null.png' ? this.user.image : this.fileName.replace(" ","%20")
     var email = this.userForm.controls['Email'].value == null ? this.user.email : this.userForm.controls['Email'].value
     var role = this.user.role
@@ -55,6 +55,7 @@ export class UserComponent implements OnInit {
     this.userService.update(user).subscribe(
       data => {
         this.messageService.showSuccess(this.translate.instant('notiUpdateSuccess'))
+        window.location.reload()
       },
       error => {
         this.messageService.showError(this.translate.instant('notiUpdateError'))

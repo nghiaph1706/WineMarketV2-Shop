@@ -16,6 +16,7 @@ export class AppComponent {
       this.translate.setDefaultLang(this.cookieService.get("locale"))
     } else {
       this.translate.setDefaultLang('en')
+      this.cookieService.set("locale",'en')
     }
   }
 }

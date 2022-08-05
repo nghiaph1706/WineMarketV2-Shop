@@ -40,6 +40,9 @@ export class DetailsComponent implements OnInit {
     this.cartDetailsService.create(this.productForm.value).subscribe(
       data => {
         this.messageService.showSuccess(this.translate.instant('notiAddToCartSuccess'))
+      },
+      err => {
+        this.messageService.showWarning(this.translate.instant('notiAddToCartError'))
       }
     )
 
