@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { UserService } from 'src/app/service/user/user.service';
 import { MessageService } from 'src/app/service/utils/message.service';
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   })
 
-  constructor(private messageService: MessageService, private userService: UserService, private cookieService: CookieService, private translate: TranslateService) { }
+  constructor(private route: Router ,private messageService: MessageService, private userService: UserService, private cookieService: CookieService, private translate: TranslateService) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
         this.cookieService.set('cart_Id', data.cartId);
         this.cookieService.set('isAdmin', data.isAdmin);
         this.messageService.showSuccess(this.translate.instant('notiLoginSuccess'))
-        window.location.reload();
+        this.route.navigate(['/product/0'])
       },
       error => {
         this.messageService.showError(this.translate.instant('notiLoginError'))
